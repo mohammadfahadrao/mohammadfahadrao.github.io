@@ -248,6 +248,49 @@
   }
 
   // Central Application Container
+  
+  // Component 7: Culture Video Player (Trafigura / Vitol Brand Film)
+  class CulturePlayer {
+    init() {
+      const trigger = document.querySelector('.culture-play-trigger');
+      const container = document.querySelector('.culture-video-aspect');
+      if (!trigger || !container) return;
+
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const existingIframe = container.querySelector('iframe.culture-video-frame');
+        if (existingIframe) return;
+
+        const iframe = document.createElement('iframe');
+        iframe.className = 'culture-video-frame';
+        iframe.src = 'https://www.youtube-nocookie.com/embed/aPWYVSpo_5k?autoplay=1&rel=0&modestbranding=1';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+        iframe.allowFullscreen = true;
+        iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;z-index:25;border-radius:12px;';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '&#10005; CLOSE FILM';
+        closeBtn.style.cssText = 'position:absolute;top:16px;right:16px;z-index:30;background:rgba(0,0,0,0.85);color:#fff;border:1px solid rgba(61,186,120,0.6);padding:8px 16px;border-radius:4px;font-size:11px;letter-spacing:2px;cursor:pointer;font-weight:600;';
+
+        closeBtn.addEventListener('click', (ev) => {
+          ev.stopPropagation();
+          iframe.remove();
+          closeBtn.remove();
+          const overlay = container.querySelector('.culture-overlay');
+          if (overlay) overlay.style.display = 'flex';
+        });
+
+        const overlay = container.querySelector('.culture-overlay');
+        if (overlay) overlay.style.display = 'none';
+
+        container.appendChild(iframe);
+        container.appendChild(closeBtn);
+      });
+    }
+  }
+
   class Application {
     constructor() {
       this.components = [
@@ -256,7 +299,8 @@
         new ParticleEngine(),
         new HeaderController(),
         new TabManager(),
-        new SmoothNavigator()
+        new SmoothNavigator(),
+        new CulturePlayer()
       ];
     }
 

@@ -1193,3 +1193,46 @@ img, svg {
 @media (max-width: 1024px) {
   .hightech-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   ACTIVE 4K VIDEO ENGINE & CULTURE PLAYER
+   ============================================================ */
+.hero-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-video-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100vh;
+  min-width: 177.77vh;
+  transform: translate(-50%, -50%) scale(1.18);
+  pointer-events: none;
+  border: none;
+  filter: var(--hero-img-filter);
+}
+
+.culture-video-aspect {
+  position: relative;
+  width: 100%;
+  padding-top: 52%;
+  background: #000000;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.culture-play-trigger {
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
