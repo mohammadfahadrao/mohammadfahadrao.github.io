@@ -38,7 +38,7 @@ defined( 'ABSPATH' ) || exit;
         POST OAK
         <div class="hero-title-rotating-wrapper">
           <div class="hero-title-rotating">
-            <span class="hero-title-service">Commercial Banking.</span>
+            <span class="hero-title-service">Banking.</span>
             <span class="hero-title-accent">Reimagined.</span>
           </div>
         </div>
@@ -49,9 +49,10 @@ defined( 'ABSPATH' ) || exit;
       </p>
 
       
-      <!-- Client Mandate: Core Capabilities Reimagined Ticker (Commercial Banking #1) -->
+      <!-- Client Mandate: Core Capabilities Reimagined Ticker (Banking #1) -->
       <div class="hero-pillars-ticker">
-        <a href="#capabilities" class="pillar-tag pillar-tag--featured"><span class="pillar-dot"></span> Commercial Banking. Reimagined.</a>
+        <a href="#capabilities" class="pillar-tag pillar-tag--featured"><span class="pillar-dot"></span> Banking. Reimagined.</a>
+        <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Commercial Banking. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Investment Banking. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Asset Management. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Investment Research. Reimagined.</a>
@@ -59,12 +60,12 @@ defined( 'ABSPATH' ) || exit;
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Wealth Management. Reimagined.</a>
       </div>
       <div class="hero-actions">
-        <button class="btn-primary" data-action="open-account" id="heroOpenAccountBtn">Open Commercial Account &rarr;</button>
+        <button class="btn-primary" data-action="open-account" id="heroOpenAccountBtn">Open an Account &rarr;</button>
         <a href="#capabilities" class="btn-ghost">Explore Capabilities</a>
       </div>
     </div>
 
-    <!-- Requirement #2: Bottom-Left Rotating Animated Text (Commercial Banking FIRST, Top-Down Transition) -->
+    <!-- Requirement #2: Bottom-Left Rotating Animated Text (Banking FIRST, Top-Down Transition) -->
     <div class="hero-bottom-left-hud">
       <div class="hud-eyebrow">
         <span class="hud-status-dot"></span>
@@ -72,7 +73,7 @@ defined( 'ABSPATH' ) || exit;
       </div>
       <div class="hero-rotating-wrapper">
         <div class="hero-rotating-text">
-          <span class="hero-rotating-service">Commercial Banking.</span>
+          <span class="hero-rotating-service">Banking.</span>
           <span class="hero-rotating-accent">Reimagined.</span>
         </div>
       </div>

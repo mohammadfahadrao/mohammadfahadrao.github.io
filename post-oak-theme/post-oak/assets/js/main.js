@@ -51,7 +51,7 @@
       this.hudEl = null;
       this.timer = null;
       this.items = [
-        { service: "Commercial Banking.", tagline: "Reimagined." },
+        { service: "Banking.", tagline: "Reimagined." },
         { service: "Investment Banking.", tagline: "Reimagined." },
         { service: "Asset Management.", tagline: "Reimagined." },
         { service: "Investment Research.", tagline: "Reimagined." },
