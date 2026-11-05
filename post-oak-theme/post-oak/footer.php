@@ -210,6 +210,81 @@
 
 </footer><!-- .site-footer -->
 
+<!-- ============================================================
+     COMMERCIAL BANKING PORTAL & ACCOUNT ONBOARDING MODAL
+     ============================================================ -->
+<div class="banking-modal" id="bankingModal" role="dialog" aria-modal="true" aria-labelledby="bankingModalTitle">
+  <div class="banking-modal__backdrop"></div>
+  <div class="banking-modal__dialog">
+    <div class="banking-modal__header">
+      <div>
+        <div class="banking-modal__crest">
+          <span class="banking-modal__crest-text">POST OAK</span>
+          <span class="banking-modal__crest-badge">Commercial Portal</span>
+        </div>
+        <div class="banking-modal__title" id="bankingModalTitle">Institutional Financial Gateway</div>
+      </div>
+      <button class="banking-modal__close" aria-label="Close modal">&times;</button>
+    </div>
+
+    <div class="banking-modal__tabs">
+      <button class="banking-tab-btn is-active" data-tab="login">Commercial Login</button>
+      <button class="banking-tab-btn" data-tab="open">Open an Account</button>
+    </div>
+
+    <div class="banking-modal__body">
+      <!-- Tab 1: Commercial Client Login -->
+      <div class="banking-tab-panel is-active" id="tab-login">
+        <form id="bankingLoginForm">
+          <div class="banking-form-group">
+            <label class="banking-label" for="corpId">Corporate Identifier / Org ID</label>
+            <input type="text" id="corpId" class="banking-input" placeholder="e.g. PO-CORP-48291" required>
+          </div>
+          <div class="banking-form-group">
+            <label class="banking-label" for="userId">Authorized Signatory User ID</label>
+            <input type="text" id="userId" class="banking-input" placeholder="e.g. corporate.treasury@enterprise.com" required>
+          </div>
+          <div class="banking-form-group">
+            <label class="banking-label" for="tokenKey">Hardware Token / Passkey (FIDO2)</label>
+            <input type="password" id="tokenKey" class="banking-input" placeholder="••••••••••••" required>
+          </div>
+          <div class="banking-security-strip">
+            <span class="hud-status-dot"></span> ◉ 256-BIT TLS 1.3 &middot; SWIFT GPI &middot; FEDWIRE GATEWAY ACTIVE
+          </div>
+          <button type="submit" class="banking-submit-btn">Sign In to Commercial Portal &rarr;</button>
+        </form>
+      </div>
+
+      <!-- Tab 2: Open a Commercial Account -->
+      <div class="banking-tab-panel" id="tab-open">
+        <form id="bankingOpenForm">
+          <div class="banking-form-group">
+            <label class="banking-label" for="legalEntity">Corporate Legal Entity Name</label>
+            <input type="text" id="legalEntity" class="banking-input" placeholder="e.g. Global Defense Technologies Inc." required>
+          </div>
+          <div class="banking-form-group">
+            <label class="banking-label" for="bankingDivision">Primary Commercial Facility Needed</label>
+            <select id="bankingDivision" class="banking-input banking-select">
+              <option value="commercial-credit">Commercial Credit &amp; Syndicated Lending ($25M - $500M+)</option>
+              <option value="treasury">Corporate Treasury &amp; Real-Time Liquidity</option>
+              <option value="aerospace-defense">Aerospace &amp; Defense Project Finance (SpaceX/Lockheed Tier 1)</option>
+              <option value="trade-finance">Cross-Border Trade &amp; FX Hedging</option>
+            </select>
+          </div>
+          <div class="banking-form-group">
+            <label class="banking-label" for="signatoryEmail">Chief Financial Officer / Authorized Contact</label>
+            <input type="email" id="signatoryEmail" class="banking-input" placeholder="cfo@corporation.com" required>
+          </div>
+          <div class="banking-security-strip">
+            <span class="hud-status-dot"></span> DIRECT DISPATCH TO POST OAK COMMERCIAL UNDERWRITING COMMITTEE
+          </div>
+          <button type="submit" class="banking-submit-btn">Submit Onboarding Dossier &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <?php wp_footer(); ?>
 
 </body>

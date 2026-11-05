@@ -30,16 +30,16 @@
               <div class="mega-menu">
                 <div class="mega-menu__grid">
                   <a href="#capabilities" class="mega-menu__item">
-                    <span class="mega-menu__item-title">Asset Management</span>
-                    <span class="mega-menu__item-desc">Institutional and alternative strategies across global asset classes.</span>
-                  </a>
-                  <a href="#capabilities" class="mega-menu__item">
-                    <span class="mega-menu__item-title">Commercial Banking</span>
-                    <span class="mega-menu__item-desc">Tailored lending, treasury, and capital solutions for global corporations.</span>
+                    <span class="mega-menu__item-title" style="color:var(--green-accent);">Commercial Banking &bull; Core</span>
+                    <span class="mega-menu__item-desc">Tailored lending, syndication, treasury, and liquidity solutions for global corporations.</span>
                   </a>
                   <a href="#capabilities" class="mega-menu__item">
                     <span class="mega-menu__item-title">Investment Banking</span>
                     <span class="mega-menu__item-desc">Strategic M&amp;A advisory, capital markets, and complex transaction execution.</span>
+                  </a>
+                  <a href="#capabilities" class="mega-menu__item">
+                    <span class="mega-menu__item-title">Asset Management</span>
+                    <span class="mega-menu__item-desc">Institutional and alternative strategies across global asset classes.</span>
                   </a>
                   <a href="#capabilities" class="mega-menu__item">
                     <span class="mega-menu__item-title">Global Investment Research</span>
@@ -64,10 +64,24 @@
           </ul>
         </nav>
 
-        <!-- 1-Click Executive Theme Toggle -->
-        <button class="theme-switch-btn" aria-label="Toggle Light and Dark Mode">
-          <span class="theme-switch-icon">&#9681;</span> Light Mode
-        </button>
+        <!-- Top Right Banking Element Access & Executive Theme Switcher -->
+        <div class="header-actions">
+          <div class="header-banking-actions">
+            <button class="btn-banking-login" id="headerLoginBtn" data-action="portal-login" aria-label="Commercial Banking Client Login">
+              <svg class="banking-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>Client Login</span>
+            </button>
+            <button class="btn-banking-open" id="headerOpenAccountBtn" data-action="open-account" aria-label="Open an Account">
+              <span>Open an Account</span>
+              <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+
+          <!-- 1-Click Executive Theme Toggle -->
+          <button class="theme-switch-btn" aria-label="Toggle Light and Dark Mode">
+            <span class="theme-switch-icon">&#9681;</span> Light Mode
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -105,7 +119,12 @@
 
       <h1 class="hero-main-title">
         POST OAK
-        <span>Financial Services Reimagined.</span>
+        <div class="hero-title-rotating-wrapper">
+          <div class="hero-title-rotating">
+            <span class="hero-title-service">Commercial Banking.</span>
+            <span class="hero-title-accent">Reimagined.</span>
+          </div>
+        </div>
       </h1>
 
       <p class="section-subtitle">
@@ -113,29 +132,32 @@
       </p>
 
       
-      <!-- Client Mandate: Core Capabilities Reimagined Ticker -->
+      <!-- Client Mandate: Core Capabilities Reimagined Ticker (Commercial Banking #1) -->
       <div class="hero-pillars-ticker">
-        <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Commercial Banking. Reimagined.</a>
+        <a href="#capabilities" class="pillar-tag pillar-tag--featured"><span class="pillar-dot"></span> Commercial Banking. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Investment Banking. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Asset Management. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Investment Research. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Private Banking. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Wealth Management. Reimagined.</a>
       </div>
-<div class="hero-actions">
-        <a href="#capabilities" class="btn-primary">Explore Capabilities &rarr;</a>
-        <a href="#about" class="btn-ghost">About the Firm</a>
+      <div class="hero-actions">
+        <button class="btn-primary" data-action="open-account" id="heroOpenAccountBtn">Open Commercial Account &rarr;</button>
+        <a href="#capabilities" class="btn-ghost">Explore Capabilities</a>
       </div>
     </div>
 
-    <!-- Requirement #2: Bottom-Left Rotating Animated Text -->
+    <!-- Requirement #2: Bottom-Left Rotating Animated Text (Commercial Banking FIRST, Top-Down Transition) -->
     <div class="hero-bottom-left-hud">
       <div class="hud-eyebrow">
         <span class="hud-status-dot"></span>
-        <span class="hud-label">GLOBAL CAPABILITIES</span>
+        <span class="hud-label">PRIMARY DIVISION // CORE CAPABILITY</span>
       </div>
       <div class="hero-rotating-wrapper">
-        <span class="hero-rotating-text">Financial Services Reimagined.</span>
+        <div class="hero-rotating-text">
+          <span class="hero-rotating-service">Commercial Banking.</span>
+          <span class="hero-rotating-accent">Reimagined.</span>
+        </div>
       </div>
     </div>
 
@@ -195,26 +217,31 @@
       </p>
 
       <div class="capabilities-grid">
-        <div class="capability-card">
+        <!-- Division I: Commercial Banking (Client Mandate #1 Core Service) -->
+        <div class="capability-card capability-card--featured">
           <div>
+            <span class="capability-featured-badge">CORE SERVICE // COMMERCIAL BANKING</span>
             <div class="card-top">
-              <span class="card-numeral">[ I ]</span>
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              <span class="card-numeral" style="color:var(--green-accent);">[ I ]</span>
+              <svg class="card-icon" style="color:var(--green-accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
             </div>
-            <h3 class="card-title">Asset Management</h3>
-            <p class="card-desc">Institutional and alternative investment strategies designed for superior risk-adjusted performance across global public and private asset classes.</p>
+            <h3 class="card-title">Commercial Banking</h3>
+            <p class="card-desc">Tailored corporate lending, syndicated credit facilities, institutional treasury management, liquidity infrastructure, and capital solutions for global corporations.</p>
           </div>
-          <a href="#contact" class="card-link">Explore Division &rarr;</a>
+          <div style="display:flex;gap:12px;align-items:center;margin-top:16px;flex-wrap:wrap;">
+            <button class="btn-primary" data-action="open-account" style="padding:7px 14px;font-size:0.65rem;cursor:pointer;">Open Account &rarr;</button>
+            <a href="#contact" class="card-link" style="margin-top:0;">Division Overview &rarr;</a>
+          </div>
         </div>
 
         <div class="capability-card">
           <div>
             <div class="card-top">
               <span class="card-numeral">[ II ]</span>
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <h3 class="card-title">Commercial Banking</h3>
-            <p class="card-desc">Tailored lending, syndicated credit facilities, treasury solutions, and cross-border trade finance for leading corporate and middle-market enterprises.</p>
+            <h3 class="card-title">Investment Banking</h3>
+            <p class="card-desc">Consequential M&amp;A advisory, equity and debt underwriting, corporate restructuring, and transformative transaction execution across international capital markets.</p>
           </div>
           <a href="#contact" class="card-link">Explore Division &rarr;</a>
         </div>
@@ -223,10 +250,10 @@
           <div>
             <div class="card-top">
               <span class="card-numeral">[ III ]</span>
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
             </div>
-            <h3 class="card-title">Investment Banking</h3>
-            <p class="card-desc">Consequential M&amp;A advisory, equity and debt underwriting, corporate restructuring, and transformative transaction execution across international capital markets.</p>
+            <h3 class="card-title">Asset Management</h3>
+            <p class="card-desc">Institutional and alternative investment strategies designed for superior risk-adjusted performance across global public and private asset classes.</p>
           </div>
           <a href="#contact" class="card-link">Explore Division &rarr;</a>
         </div>
@@ -612,6 +639,81 @@
       </p>
     </div>
   </footer>
+
+  <!-- ============================================================
+       COMMERCIAL BANKING PORTAL & ACCOUNT ONBOARDING MODAL
+       ============================================================ -->
+  <div class="banking-modal" id="bankingModal" role="dialog" aria-modal="true" aria-labelledby="bankingModalTitle">
+    <div class="banking-modal__backdrop"></div>
+    <div class="banking-modal__dialog">
+      <div class="banking-modal__header">
+        <div>
+          <div class="banking-modal__crest">
+            <span class="banking-modal__crest-text">POST OAK</span>
+            <span class="banking-modal__crest-badge">Commercial Portal</span>
+          </div>
+          <div class="banking-modal__title" id="bankingModalTitle">Institutional Financial Gateway</div>
+        </div>
+        <button class="banking-modal__close" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="banking-modal__tabs">
+        <button class="banking-tab-btn is-active" data-tab="login">Commercial Login</button>
+        <button class="banking-tab-btn" data-tab="open">Open an Account</button>
+      </div>
+
+      <div class="banking-modal__body">
+        <!-- Tab 1: Commercial Client Login -->
+        <div class="banking-tab-panel is-active" id="tab-login">
+          <form id="bankingLoginForm">
+            <div class="banking-form-group">
+              <label class="banking-label" for="corpId">Corporate Identifier / Org ID</label>
+              <input type="text" id="corpId" class="banking-input" placeholder="e.g. PO-CORP-48291" required>
+            </div>
+            <div class="banking-form-group">
+              <label class="banking-label" for="userId">Authorized Signatory User ID</label>
+              <input type="text" id="userId" class="banking-input" placeholder="e.g. corporate.treasury@enterprise.com" required>
+            </div>
+            <div class="banking-form-group">
+              <label class="banking-label" for="tokenKey">Hardware Token / Passkey (FIDO2)</label>
+              <input type="password" id="tokenKey" class="banking-input" placeholder="••••••••••••" required>
+            </div>
+            <div class="banking-security-strip">
+              <span class="hud-status-dot"></span> ◉ 256-BIT TLS 1.3 &middot; SWIFT GPI &middot; FEDWIRE GATEWAY ACTIVE
+            </div>
+            <button type="submit" class="banking-submit-btn">Sign In to Commercial Portal &rarr;</button>
+          </form>
+        </div>
+
+        <!-- Tab 2: Open a Commercial Account -->
+        <div class="banking-tab-panel" id="tab-open">
+          <form id="bankingOpenForm">
+            <div class="banking-form-group">
+              <label class="banking-label" for="legalEntity">Corporate Legal Entity Name</label>
+              <input type="text" id="legalEntity" class="banking-input" placeholder="e.g. Global Defense Technologies Inc." required>
+            </div>
+            <div class="banking-form-group">
+              <label class="banking-label" for="bankingDivision">Primary Commercial Facility Needed</label>
+              <select id="bankingDivision" class="banking-input banking-select">
+                <option value="commercial-credit">Commercial Credit &amp; Syndicated Lending ($25M - $500M+)</option>
+                <option value="treasury">Corporate Treasury &amp; Real-Time Liquidity</option>
+                <option value="aerospace-defense">Aerospace &amp; Defense Project Finance (SpaceX/Lockheed Tier 1)</option>
+                <option value="trade-finance">Cross-Border Trade &amp; FX Hedging</option>
+              </select>
+            </div>
+            <div class="banking-form-group">
+              <label class="banking-label" for="signatoryEmail">Chief Financial Officer / Authorized Contact</label>
+              <input type="email" id="signatoryEmail" class="banking-input" placeholder="cfo@corporation.com" required>
+            </div>
+            <div class="banking-security-strip">
+              <span class="hud-status-dot"></span> DIRECT DISPATCH TO POST OAK COMMERCIAL UNDERWRITING COMMITTEE
+            </div>
+            <button type="submit" class="banking-submit-btn">Submit Onboarding Dossier &rarr;</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script defer src="assets/js/main.js"></script>
 </body>

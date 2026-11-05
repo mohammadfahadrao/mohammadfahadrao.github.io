@@ -44,42 +44,83 @@
     }
   }
 
-  // Component 2: Hero Rotator (Requirement #2: Bottom-Left Smooth Transition)
+  // Component 2: Hero Rotator (Top-Down Transition: Disappears down, appears from above)
   class HeroRotator {
     constructor() {
-      this.el = null;
+      this.titleEl = null;
+      this.hudEl = null;
       this.timer = null;
-      this.phrases = [
-        "Financial Services Reimagined.",
-        "Asset Management. Reimagined.",
-        "Commercial Banking. Reimagined.",
-        "Investment Banking. Reimagined.",
-        "Investment Research. Reimagined.",
-        "Private Banking. Reimagined.",
-        "Wealth Management. Reimagined."
+      this.items = [
+        { service: "Commercial Banking.", tagline: "Reimagined." },
+        { service: "Investment Banking.", tagline: "Reimagined." },
+        { service: "Asset Management.", tagline: "Reimagined." },
+        { service: "Investment Research.", tagline: "Reimagined." },
+        { service: "Private Banking.", tagline: "Reimagined." },
+        { service: "Wealth Management.", tagline: "Reimagined." }
       ];
       this.index = 0;
     }
 
     init() {
-      this.el = document.querySelector('.hero-rotating-text');
-      if (!this.el) return;
+      this.titleEl = document.querySelector('.hero-title-rotating');
+      this.hudEl = document.querySelector('.hero-rotating-text');
+      if (!this.titleEl && !this.hudEl) return;
 
       this.timer = setInterval(() => this.next(), 3200);
     }
 
     next() {
-      this.el.style.opacity = '0';
-      this.el.style.transform = 'translateY(-14px)';
+      const elements = [this.titleEl, this.hudEl].filter(Boolean);
+
+      // Phase 1: Disappears by going DOWN
+      elements.forEach(el => {
+        el.style.transition = 'transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.38s ease';
+        el.style.transform = 'translateY(26px)';
+        el.style.opacity = '0';
+      });
 
       setTimeout(() => {
-        this.index = (this.index + 1) % this.phrases.length;
-        this.el.textContent = this.phrases[this.index];
-        this.el.style.transform = 'translateY(14px)';
-        void this.el.offsetWidth; // Force repaint
-        this.el.style.opacity = '1';
-        this.el.style.transform = 'translateY(0)';
-      }, 450);
+        this.index = (this.index + 1) % this.items.length;
+        const current = this.items[this.index];
+
+        // Update DOM content
+        if (this.titleEl) {
+          const serviceEl = this.titleEl.querySelector('.hero-title-service');
+          const accentEl = this.titleEl.querySelector('.hero-title-accent');
+          if (serviceEl) serviceEl.textContent = current.service;
+          if (accentEl) accentEl.textContent = current.tagline;
+        }
+
+        if (this.hudEl) {
+          const serviceEl = this.hudEl.querySelector('.hero-rotating-service');
+          const accentEl = this.hudEl.querySelector('.hero-rotating-accent');
+          if (serviceEl && accentEl) {
+            serviceEl.textContent = current.service;
+            accentEl.textContent = current.tagline;
+          } else {
+            this.hudEl.innerHTML = `<span class="hero-rotating-service">${current.service}</span><span class="hero-rotating-accent">${current.tagline}</span>`;
+          }
+        }
+
+        // Phase 2: Position new word ABOVE instantly with zero transition
+        elements.forEach(el => {
+          el.style.transition = 'none';
+          el.style.transform = 'translateY(-26px)';
+          el.style.opacity = '0';
+        });
+
+        // Force browser layout reflow
+        void document.body.offsetHeight;
+
+        // Phase 3: Transition smoothly from ABOVE down to center position
+        requestAnimationFrame(() => {
+          elements.forEach(el => {
+            el.style.transition = 'transform 0.42s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.42s ease';
+            el.style.transform = 'translateY(0)';
+            el.style.opacity = '1';
+          });
+        });
+      }, 380);
     }
   }
 
@@ -291,6 +332,112 @@
     }
   }
 
+  // Component 8: Banking Portal & Account Onboarding Modal Manager
+  class BankingModalManager {
+    init() {
+      const modal = document.getElementById('bankingModal');
+      if (!modal) return;
+
+      const openTriggers = document.querySelectorAll('[data-action="open-account"], .btn-banking-open, #headerOpenAccountBtn, #heroOpenAccountBtn');
+      const loginTriggers = document.querySelectorAll('[data-action="portal-login"], .btn-banking-login, #headerLoginBtn');
+      const closeButtons = modal.querySelectorAll('.banking-modal__close, .banking-modal__backdrop');
+      const tabButtons = modal.querySelectorAll('.banking-tab-btn');
+      const tabPanels = modal.querySelectorAll('.banking-tab-panel');
+
+      const switchTab = (tabName) => {
+        tabButtons.forEach(btn => {
+          btn.classList.toggle('is-active', btn.dataset.tab === tabName);
+        });
+        tabPanels.forEach(panel => {
+          panel.classList.toggle('is-active', panel.id === `tab-${tabName}`);
+        });
+      };
+
+      const openModal = (tab = 'login') => {
+        switchTab(tab);
+        modal.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeModal = () => {
+        modal.classList.remove('is-active');
+        document.body.style.overflow = '';
+      };
+
+      loginTriggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal('login');
+        });
+      });
+
+      openTriggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal('open');
+        });
+      });
+
+      closeButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          closeModal();
+        });
+      });
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          switchTab(btn.dataset.tab);
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+          closeModal();
+        }
+      });
+
+      // Handle form simulations
+      const loginForm = document.getElementById('bankingLoginForm');
+      if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const submitBtn = loginForm.querySelector('.banking-submit-btn');
+          const originalText = submitBtn.textContent;
+          submitBtn.textContent = 'AUTHENTICATING ZERO-TRUST TOKEN...';
+          submitBtn.disabled = true;
+          setTimeout(() => {
+            submitBtn.innerHTML = '&#10003; CREDENTIALS VERIFIED &middot; CONNECTING TO FEDWIRE';
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+              closeModal();
+            }, 1800);
+          }, 1000);
+        });
+      }
+
+      const openForm = document.getElementById('bankingOpenForm');
+      if (openForm) {
+        openForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const submitBtn = openForm.querySelector('.banking-submit-btn');
+          const originalText = submitBtn.textContent;
+          submitBtn.textContent = 'DISPATCHING TO COMMERCIAL UNDERWRITING...';
+          submitBtn.disabled = true;
+          setTimeout(() => {
+            submitBtn.innerHTML = '&#10003; APPLICATION SUBMITTED &middot; DOSSIER REF: PO-TX-8820';
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+              closeModal();
+            }, 2000);
+          }, 1200);
+        });
+      }
+    }
+  }
+
   class Application {
     constructor() {
       this.components = [
@@ -300,7 +447,8 @@
         new HeaderController(),
         new TabManager(),
         new SmoothNavigator(),
-        new CulturePlayer()
+        new CulturePlayer(),
+        new BankingModalManager()
       ];
     }
 

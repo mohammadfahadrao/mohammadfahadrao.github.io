@@ -259,6 +259,113 @@ img, svg {
 }
 
 /* Theme Switcher Toggle */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-banking-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Banking Portal Login Button (Top Right) */
+.btn-banking-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.btn-banking-login:hover {
+  border-color: var(--green-accent);
+  color: var(--green-accent);
+  background: rgba(61, 186, 120, 0.08);
+  box-shadow: 0 0 16px var(--green-glow);
+  transform: translateY(-1px);
+}
+
+.banking-lock-icon {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+}
+
+/* PROMINENT Open an Account Button (Top Right Client Mandate) */
+.btn-banking-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #03140a !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-banking-open::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(30deg);
+  animation: shineSweep 4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes shineSweep {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  30%, 100% { transform: translateX(100%) rotate(30deg); }
+}
+
+.btn-banking-open:hover {
+  transform: translateY(-1.5px) scale(1.02);
+  box-shadow: 0 0 36px rgba(16, 185, 129, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  color: #000000 !important;
+}
+
+.btn-arrow-icon {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.btn-banking-open:hover .btn-arrow-icon {
+  transform: translateX(2px);
+}
+
 .theme-switch-btn {
   display: inline-flex;
   align-items: center;
@@ -274,6 +381,7 @@ img, svg {
   color: var(--text-primary);
   cursor: pointer;
   transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
 .theme-switch-btn:hover {
@@ -427,18 +535,45 @@ img, svg {
   color: var(--text-primary);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-.hero-main-title span {
+.hero-title-rotating-wrapper {
+  overflow: hidden;
+  position: relative;
+  height: clamp(5.2rem, 11vw, 9.8rem);
+  margin-top: 10px;
+}
+
+.hero-title-rotating {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.42s ease;
+  will-change: transform, opacity;
+}
+
+.hero-title-service {
   display: block;
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  font-size: clamp(2.2rem, 4.8vw, 4.5rem);
   font-weight: 400;
   font-style: italic;
-  letter-spacing: -0.01em;
-  color: var(--text-secondary);
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
   text-transform: none;
+  line-height: 1.1;
+}
+
+.hero-title-accent {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.2vw, 3.8rem);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.015em;
+  color: var(--green-accent);
+  text-transform: none;
+  line-height: 1.15;
 }
 
 .hero-actions {
@@ -532,21 +667,37 @@ img, svg {
 }
 
 .hero-rotating-wrapper {
-  height: 38px;
+  height: 52px;
   overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .hero-rotating-text {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.42s ease;
+  will-change: transform, opacity;
+  line-height: 1.25;
+}
+
+.hero-rotating-service {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: 400;
+  font-size: 1.15rem;
+  font-weight: 500;
   font-style: italic;
   color: var(--text-primary);
   white-space: nowrap;
-  display: inline-block;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
-  will-change: transform, opacity;
+}
+
+.hero-rotating-accent {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--green-accent);
+  white-space: nowrap;
 }
 
 .hero-bottom-right-telemetry {
@@ -1092,6 +1243,19 @@ img, svg {
   transition: all 0.2s ease;
 }
 
+.pillar-tag--featured {
+  background: rgba(61, 186, 120, 0.12) !important;
+  border-color: var(--green-accent) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  box-shadow: 0 0 16px var(--green-glow);
+}
+
+.pillar-tag--featured .pillar-dot {
+  background: var(--green-accent);
+  box-shadow: 0 0 8px var(--green-accent);
+}
+
 .pillar-tag:hover {
   background: var(--bg-tertiary);
   border-color: var(--green-accent);
@@ -1235,4 +1399,244 @@ img, svg {
   cursor: pointer;
   z-index: 10;
   position: relative;
+}
+
+/* ============================================================
+   COMMERCIAL BANKING PORTAL & ACCOUNT ONBOARDING MODAL
+   ============================================================ */
+.banking-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+}
+
+.banking-modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.banking-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 8, 6, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.banking-modal__dialog {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 540px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6), 0 0 32px var(--green-glow);
+  overflow: hidden;
+  transform: scale(0.96) translateY(12px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.banking-modal.is-active .banking-modal__dialog {
+  transform: scale(1) translateY(0);
+}
+
+.banking-modal__header {
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.banking-modal__crest {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.banking-modal__crest-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+}
+
+.banking-modal__crest-badge {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-accent);
+  border: 1px solid rgba(61, 186, 120, 0.4);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.banking-modal__title {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.banking-modal__close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.banking-modal__close:hover {
+  color: var(--text-primary);
+}
+
+.banking-modal__tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.banking-tab-btn {
+  flex: 1;
+  padding: 14px 18px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.banking-tab-btn.is-active {
+  color: var(--green-accent);
+  border-bottom-color: var(--green-accent);
+  background: rgba(61, 186, 120, 0.05);
+}
+
+.banking-modal__body {
+  padding: 28px;
+}
+
+.banking-tab-panel {
+  display: none;
+}
+
+.banking-tab-panel.is-active {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+.banking-form-group {
+  margin-bottom: 18px;
+}
+
+.banking-label {
+  display: block;
+  font-size: 0.70rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.banking-input {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-card);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-family: var(--font-sans);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.banking-input:focus {
+  border-color: var(--green-accent);
+  box-shadow: 0 0 12px var(--green-glow);
+}
+
+.banking-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233dba78' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.banking-security-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 18px 0;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+}
+
+.banking-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--green-accent);
+  color: #03140a;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.banking-submit-btn:hover {
+  background: #4de08f;
+  box-shadow: 0 0 24px var(--green-glow);
+}
+
+.capability-card--featured {
+  border-color: rgba(61, 186, 120, 0.5) !important;
+  background: linear-gradient(180deg, rgba(61, 186, 120, 0.05) 0%, var(--bg-card) 100%) !important;
+  box-shadow: 0 0 30px rgba(61, 186, 120, 0.12);
+  position: relative;
+}
+
+.capability-featured-badge {
+  display: inline-block;
+  font-size: 0.60rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--green-accent);
+  background: rgba(61, 186, 120, 0.15);
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(61, 186, 120, 0.3);
 }

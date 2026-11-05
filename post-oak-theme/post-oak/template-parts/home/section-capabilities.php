@@ -16,40 +16,45 @@ defined( 'ABSPATH' ) || exit;
       </p>
 
       <div class="capabilities-grid">
-        <div class="capability-card">
+        <!-- Division I: Commercial Banking (Client Mandate #1 Core Service) -->
+        <div class="capability-card capability-card--featured">
           <div>
+            <span class="capability-featured-badge"><?php esc_html_e( 'CORE SERVICE // COMMERCIAL BANKING', 'post-oak' ); ?></span>
             <div class="card-top">
-              <span class="card-numeral">[ I ]</span>
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              <span class="card-numeral" style="color:var(--green-accent);">[ I ]</span>
+              <svg class="card-icon" style="color:var(--green-accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
             </div>
-            <h3 class="card-title">Asset Management</h3>
-            <p class="card-desc">Institutional and alternative investment strategies designed for superior risk-adjusted performance across global public and private asset classes.</p>
+            <h3 class="card-title"><?php esc_html_e( 'Commercial Banking', 'post-oak' ); ?></h3>
+            <p class="card-desc"><?php esc_html_e( 'Tailored corporate lending, syndicated credit facilities, institutional treasury management, liquidity infrastructure, and capital solutions for global corporations.', 'post-oak' ); ?></p>
           </div>
-          <a href="#contact" class="card-link">Explore Division &rarr;</a>
+          <div style="display:flex;gap:12px;align-items:center;margin-top:16px;flex-wrap:wrap;">
+            <button class="btn-primary" data-action="open-account" style="padding:7px 14px;font-size:0.65rem;cursor:pointer;"><?php esc_html_e( 'Open Account →', 'post-oak' ); ?></button>
+            <a href="#contact" class="card-link" style="margin-top:0;"><?php esc_html_e( 'Division Overview →', 'post-oak' ); ?></a>
+          </div>
         </div>
 
         <div class="capability-card">
           <div>
             <div class="card-top">
               <span class="card-numeral">[ II ]</span>
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <h3 class="card-title">Commercial Banking</h3>
-            <p class="card-desc">Tailored lending, syndicated credit facilities, treasury solutions, and cross-border trade finance for leading corporate and middle-market enterprises.</p>
+            <h3 class="card-title"><?php esc_html_e( 'Investment Banking', 'post-oak' ); ?></h3>
+            <p class="card-desc"><?php esc_html_e( 'Consequential M&amp;A advisory, equity and debt underwriting, corporate restructuring, and transformative transaction execution across international capital markets.', 'post-oak' ); ?></p>
           </div>
-          <a href="#contact" class="card-link">Explore Division &rarr;</a>
+          <a href="#contact" class="card-link"><?php esc_html_e( 'Explore Division →', 'post-oak' ); ?></a>
         </div>
 
         <div class="capability-card">
           <div>
             <div class="card-top">
               <span class="card-numeral">[ III ]</span>
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
             </div>
-            <h3 class="card-title">Investment Banking</h3>
-            <p class="card-desc">Consequential M&amp;A advisory, equity and debt underwriting, corporate restructuring, and transformative transaction execution across international capital markets.</p>
+            <h3 class="card-title"><?php esc_html_e( 'Asset Management', 'post-oak' ); ?></h3>
+            <p class="card-desc"><?php esc_html_e( 'Institutional and alternative investment strategies designed for superior risk-adjusted performance across global public and private asset classes.', 'post-oak' ); ?></p>
           </div>
-          <a href="#contact" class="card-link">Explore Division &rarr;</a>
+          <a href="#contact" class="card-link"><?php esc_html_e( 'Explore Division →', 'post-oak' ); ?></a>
         </div>
 
         <div class="capability-card">

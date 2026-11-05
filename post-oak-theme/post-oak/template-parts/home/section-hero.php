@@ -36,7 +36,12 @@ defined( 'ABSPATH' ) || exit;
 
       <h1 class="hero-main-title">
         POST OAK
-        <span>Financial Services Reimagined.</span>
+        <div class="hero-title-rotating-wrapper">
+          <div class="hero-title-rotating">
+            <span class="hero-title-service">Commercial Banking.</span>
+            <span class="hero-title-accent">Reimagined.</span>
+          </div>
+        </div>
       </h1>
 
       <p class="section-subtitle">
@@ -44,29 +49,32 @@ defined( 'ABSPATH' ) || exit;
       </p>
 
       
-      <!-- Client Mandate: Core Capabilities Reimagined Ticker -->
+      <!-- Client Mandate: Core Capabilities Reimagined Ticker (Commercial Banking #1) -->
       <div class="hero-pillars-ticker">
-        <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Commercial Banking. Reimagined.</a>
+        <a href="#capabilities" class="pillar-tag pillar-tag--featured"><span class="pillar-dot"></span> Commercial Banking. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Investment Banking. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Asset Management. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Investment Research. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Private Banking. Reimagined.</a>
         <a href="#capabilities" class="pillar-tag"><span class="pillar-dot"></span> Wealth Management. Reimagined.</a>
       </div>
-<div class="hero-actions">
-        <a href="#capabilities" class="btn-primary">Explore Capabilities &rarr;</a>
-        <a href="#about" class="btn-ghost">About the Firm</a>
+      <div class="hero-actions">
+        <button class="btn-primary" data-action="open-account" id="heroOpenAccountBtn">Open Commercial Account &rarr;</button>
+        <a href="#capabilities" class="btn-ghost">Explore Capabilities</a>
       </div>
     </div>
 
-    <!-- Requirement #2: Bottom-Left Rotating Animated Text -->
+    <!-- Requirement #2: Bottom-Left Rotating Animated Text (Commercial Banking FIRST, Top-Down Transition) -->
     <div class="hero-bottom-left-hud">
       <div class="hud-eyebrow">
         <span class="hud-status-dot"></span>
-        <span class="hud-label">GLOBAL CAPABILITIES</span>
+        <span class="hud-label">PRIMARY DIVISION // CORE CAPABILITY</span>
       </div>
       <div class="hero-rotating-wrapper">
-        <span class="hero-rotating-text">Financial Services Reimagined.</span>
+        <div class="hero-rotating-text">
+          <span class="hero-rotating-service">Commercial Banking.</span>
+          <span class="hero-rotating-accent">Reimagined.</span>
+        </div>
       </div>
     </div>
 

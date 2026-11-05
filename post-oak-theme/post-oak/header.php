@@ -60,18 +60,11 @@
 						<!-- Right: Capability links grid -->
 						<div class="mega-menu__grid" role="list">
 
-							<a href="<?php echo esc_url( home_url( '/capabilities/asset-management/' ) ); ?>"
-							   class="mega-menu__item"
-							   role="listitem">
-								<span class="mega-menu__item-title"><?php esc_html_e( 'Asset Management', 'post-oak' ); ?></span>
-								<span class="mega-menu__item-desc"><?php esc_html_e( 'Disciplined investment strategies across global asset classes for institutional and private clients.', 'post-oak' ); ?></span>
-							</a>
-
 							<a href="<?php echo esc_url( home_url( '/capabilities/commercial-banking/' ) ); ?>"
 							   class="mega-menu__item"
 							   role="listitem">
-								<span class="mega-menu__item-title"><?php esc_html_e( 'Commercial Banking', 'post-oak' ); ?></span>
-								<span class="mega-menu__item-desc"><?php esc_html_e( 'Tailored credit, lending, and treasury solutions for corporate and middle-market enterprises.', 'post-oak' ); ?></span>
+								<span class="mega-menu__item-title" style="color:var(--green-accent);"><?php esc_html_e( 'Commercial Banking • Core', 'post-oak' ); ?></span>
+								<span class="mega-menu__item-desc"><?php esc_html_e( 'Tailored credit, corporate lending, and enterprise treasury solutions.', 'post-oak' ); ?></span>
 							</a>
 
 							<a href="<?php echo esc_url( home_url( '/capabilities/investment-banking/' ) ); ?>"
@@ -79,6 +72,13 @@
 							   role="listitem">
 								<span class="mega-menu__item-title"><?php esc_html_e( 'Investment Banking', 'post-oak' ); ?></span>
 								<span class="mega-menu__item-desc"><?php esc_html_e( 'Advisory, capital markets, and M&amp;A execution for leading corporations and sponsors.', 'post-oak' ); ?></span>
+							</a>
+
+							<a href="<?php echo esc_url( home_url( '/capabilities/asset-management/' ) ); ?>"
+							   class="mega-menu__item"
+							   role="listitem">
+								<span class="mega-menu__item-title"><?php esc_html_e( 'Asset Management', 'post-oak' ); ?></span>
+								<span class="mega-menu__item-desc"><?php esc_html_e( 'Disciplined investment strategies across global asset classes for institutional and private clients.', 'post-oak' ); ?></span>
 							</a>
 
 							<a href="<?php echo esc_url( home_url( '/capabilities/global-investment-research/' ) ); ?>"
@@ -170,6 +170,24 @@
 
 		</ul><!-- .primary-nav__list -->
 	</nav><!-- .primary-nav -->
+
+	<!-- Top Right Banking Element Access & Executive Theme Switcher -->
+	<div class="header-actions">
+		<div class="header-banking-actions">
+			<button class="btn-banking-login" id="headerLoginBtn" data-action="portal-login" aria-label="<?php esc_attr_e( 'Commercial Banking Client Login', 'post-oak' ); ?>">
+				<svg class="banking-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+				<span><?php esc_html_e( 'Client Login', 'post-oak' ); ?></span>
+			</button>
+			<button class="btn-banking-open" id="headerOpenAccountBtn" data-action="open-account" aria-label="<?php esc_attr_e( 'Open an Account', 'post-oak' ); ?>">
+				<span><?php esc_html_e( 'Open an Account', 'post-oak' ); ?></span>
+				<svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+			</button>
+		</div>
+
+		<button class="theme-switch-btn" aria-label="<?php esc_attr_e( 'Toggle Light and Dark Mode', 'post-oak' ); ?>">
+			<span class="theme-switch-icon">&#9681;</span> <?php esc_html_e( 'Light Mode', 'post-oak' ); ?>
+		</button>
+	</div>
 
 	<!-- Mobile Hamburger Button -->
 	<button class="nav-hamburger"
