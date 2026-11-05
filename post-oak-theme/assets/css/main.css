@@ -1002,3 +1002,194 @@ img, svg {
   .hero-bottom-left-hud { left: 20px; right: 20px; bottom: 20px; max-width: none; }
   .hero-bottom-right-telemetry { display: none; }
 }
+
+/* ============================================================
+   PALANTIR / SPACEX / AEROSPACE HIGH-TECH STYLING
+   ============================================================ */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: var(--hero-img-filter);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero-telemetry-strip {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.hero-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(61, 186, 120, 0.35);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-accent);
+}
+
+.live-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff3b30;
+  box-shadow: 0 0 10px #ff3b30;
+  animation: pulseLive 1.4s infinite ease-in-out;
+}
+
+@keyframes pulseLive {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.85); }
+}
+
+.hero-pillars-ticker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 36px 0;
+  max-width: 900px;
+}
+
+.pillar-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-card);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.pillar-tag:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--green-accent);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.pillar-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green-accent);
+}
+
+.hud-footer-meta {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Strategic Aerospace, Defense & Palantir-Grade Grid */
+.hightech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 50px;
+}
+
+.hightech-card {
+  position: relative;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-card);
+  padding: 40px 34px;
+  transition: all 0.35s ease;
+}
+
+.hightech-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px var(--green-glow);
+  transform: translateY(-4px);
+}
+
+/* Hairline corner crosshairs (Palantir/Aerospace signature) */
+.corner-cross {
+  position: absolute;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--green-accent);
+  opacity: 0.6;
+}
+
+.hair-tl { top: 6px; left: 8px; }
+.hair-tr { top: 6px; right: 8px; }
+.hair-bl { bottom: 6px; left: 8px; }
+.hair-br { bottom: 6px; right: 8px; }
+
+.hightech-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--green-accent);
+  margin-bottom: 14px;
+}
+
+.hightech-title {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.hightech-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.hightech-metrics {
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+  .hightech-grid { grid-template-columns: 1fr; }
+}

@@ -23,6 +23,7 @@ get_template_part( 'template-parts/home/section', 'about' );
 get_template_part( 'template-parts/home/section', 'capabilities' );
 
 // Section 5: Brand Film & Corporate Culture
+get_template_part( 'template-parts/home/section', 'defense-tech' );
 get_template_part( 'template-parts/home/section', 'culture' );
 
 // Section 6: Corporate Governance 8-Division Tabs
