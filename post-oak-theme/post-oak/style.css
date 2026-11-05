@@ -1,0 +1,16 @@
+/*
+Theme Name:  Post Oak
+Theme URI:   https://postoakfinancial.com
+Author:      Post Oak, Inc.
+Author URI:  https://postoakfinancial.com
+Description: Institutional-grade modern WordPress theme for Post Oak Financial Services — a multinational financial services conglomerate.
+Version:     2.0.0
+License:     Proprietary
+Text Domain: post-oak
+*/
+
+/* ============================================================
+   Post Oak Financial Services — Master Stylesheet
+   Design system and modular components compiled in assets/css/main.css
+   ============================================================ */
+@import url('assets/css/main.css');
